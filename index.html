@@ -7,16 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --ink:        #1c1208;
-  --cream:      #faf6ee;
-  --warm:       #f5ede0;
-  --border:     rgba(28,18,8,0.1);
-  --muted:      #8a7060;
-  --accent:     #c4622d;
-  --accent-lt:  #f2ddd0;
-  --sage:       #6b7c5e;
-  --shadow-sm:  0 2px 12px rgba(28,18,8,0.07);
-  --shadow-lg:  0 16px 48px rgba(28,18,8,0.14);
+  --ink:       #1c1208;
+  --cream:     #faf6ee;
+  --warm:      #f5ede0;
+  --border:    rgba(28,18,8,0.1);
+  --muted:     #8a7060;
+  --accent:    #c4622d;
+  --accent-lt: #f2ddd0;
+  --sage:      #6b7c5e;
+  --shadow-sm: 0 2px 12px rgba(28,18,8,0.07);
+  --shadow-lg: 0 16px 48px rgba(28,18,8,0.14);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh}
@@ -38,8 +38,7 @@ h1 em{font-style:italic;color:var(--muted)}
 #searchInput{width:100%;padding:9px 12px 9px 34px;border:1px solid var(--border);border-radius:100px;background:#fff;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;transition:border-color .18s}
 #searchInput:focus{border-color:var(--ink)}
 #searchInput::placeholder{color:var(--muted)}
-#sortSelect{padding:9px 32px 9px 14px;border:1px solid var(--border);border-radius:100px;background:#fff;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);cursor:pointer;outline:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a7060' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;transition:border-color .18s}
-#sortSelect:focus{border-color:var(--ink)}
+#sortSelect{padding:9px 32px 9px 14px;border:1px solid var(--border);border-radius:100px;background:#fff;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);cursor:pointer;outline:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a7060' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
 .toggle-wrap{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;margin-left:auto}
 .toggle-wrap span{font-size:13px;color:var(--muted);white-space:nowrap}
 .toggle{width:36px;height:20px;background:rgba(28,18,8,0.15);border-radius:100px;position:relative;transition:background .2s;flex-shrink:0}
@@ -67,15 +66,18 @@ h1 em{font-style:italic;color:var(--muted)}
 .card.is-sold:hover{transform:none;box-shadow:var(--shadow-sm)}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
+/* Card image */
 .card-img{position:relative;padding-top:68%;background:var(--warm);overflow:hidden;cursor:pointer}
 .card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .card:hover .card-img img{transform:scale(1.05)}
 .no-img{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:.2;cursor:default}
 .zoom-hint{position:absolute;bottom:10px;right:10px;background:rgba(28,18,8,.55);color:#fff;border-radius:6px;padding:4px 8px;font-size:11px;opacity:0;transition:opacity .2s;pointer-events:none;backdrop-filter:blur(4px)}
 .card:hover .zoom-hint{opacity:1}
+.photo-count{position:absolute;top:10px;left:10px;background:rgba(28,18,8,.55);color:#fff;border-radius:6px;padding:4px 8px;font-size:11px;backdrop-filter:blur(4px);display:flex;align-items:center;gap:4px}
 .sold-badge{position:absolute;top:12px;right:12px;background:var(--ink);color:var(--cream);font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:5px 11px;border-radius:100px}
 .cat-badge{position:absolute;bottom:10px;left:10px;background:rgba(250,246,238,.92);color:var(--muted);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px;backdrop-filter:blur(6px)}
 
+/* Card body */
 .card-body{padding:16px 18px 18px}
 .card-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;line-height:1.2;margin-bottom:6px}
 .card-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:14px;min-height:34px}
@@ -87,18 +89,47 @@ h1 em{font-style:italic;color:var(--muted)}
 .cond-dot{width:6px;height:6px;border-radius:50%;background:var(--sage);flex-shrink:0}
 .cond-dot.used{background:var(--muted)}
 .cond-dot.fair{background:var(--accent)}
-.share-btn{background:none;border:1px solid var(--border);border-radius:6px;padding:5px 7px;cursor:pointer;color:var(--muted);transition:all .15s;display:flex;align-items:center;justify-content:center}
-.share-btn:hover{border-color:var(--ink);color:var(--ink)}
-.share-btn svg{width:13px;height:13px}
+
+/* Card buttons */
+.icon-btn{background:none;border:1px solid var(--border);border-radius:6px;padding:5px 7px;cursor:pointer;color:var(--muted);transition:all .15s;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.icon-btn:hover{border-color:var(--ink);color:var(--ink)}
+.icon-btn svg{width:13px;height:13px}
+.email-btn{background:var(--accent-lt);border-color:var(--accent-lt);color:var(--accent);padding:6px 12px;gap:5px;border-radius:100px;font-size:12px;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.email-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.email-btn svg{width:12px;height:12px}
 
 /* LIGHTBOX */
-.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(28,18,8,.92);align-items:center;justify-content:center;padding:24px;cursor:zoom-out;backdrop-filter:blur(8px)}
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(20,12,4,.94);align-items:center;justify-content:center;backdrop-filter:blur(10px)}
 .lightbox.open{display:flex}
-.lightbox img{max-width:min(92vw,1100px);max-height:88vh;object-fit:contain;border-radius:8px;box-shadow:0 32px 80px rgba(0,0,0,.5);cursor:default;animation:lbIn .2s ease}
-@keyframes lbIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
-.lb-close{position:absolute;top:20px;right:24px;background:none;border:none;color:rgba(255,255,255,.7);font-size:2rem;cursor:pointer;line-height:1;transition:color .15s}
+.lb-inner{position:relative;display:flex;flex-direction:column;align-items:center;max-width:min(94vw,1100px);width:100%}
+.lb-img-wrap{position:relative;width:100%;display:flex;align-items:center;justify-content:center}
+.lb-img-wrap img{max-width:100%;max-height:80vh;object-fit:contain;border-radius:8px;box-shadow:0 32px 80px rgba(0,0,0,.5);animation:lbIn .2s ease;display:block}
+@keyframes lbIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+
+/* Lightbox nav arrows */
+.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:10;backdrop-filter:blur(4px)}
+.lb-arrow:hover{background:rgba(255,255,255,.25)}
+.lb-arrow.prev{left:-54px}
+.lb-arrow.next{right:-54px}
+.lb-arrow.hidden{display:none}
+
+/* Lightbox dots */
+.lb-dots{display:flex;gap:6px;margin-top:16px;justify-content:center}
+.lb-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .15s;border:none;padding:0}
+.lb-dot.active{background:#fff}
+
+/* Lightbox caption */
+.lb-caption{margin-top:14px;color:rgba(255,255,255,.65);font-size:13px;text-align:center;line-height:1.5}
+.lb-caption strong{color:#fff;font-weight:500}
+
+/* Lightbox email */
+.lb-email{margin-top:14px}
+.lb-email a{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;padding:9px 20px;border-radius:100px;font-size:13px;text-decoration:none;transition:opacity .15s}
+.lb-email a:hover{opacity:.85}
+.lb-email a svg{width:13px;height:13px}
+
+.lb-close{position:absolute;top:-44px;right:0;background:none;border:none;color:rgba(255,255,255,.6);font-size:1.6rem;cursor:pointer;line-height:1;transition:color .15s;padding:4px 8px}
 .lb-close:hover{color:#fff}
-.lb-caption{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.65);font-size:13px;white-space:nowrap}
 
 /* TOAST */
 .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:100px;font-size:13px;opacity:0;transition:all .25s;pointer-events:none;z-index:2000;white-space:nowrap}
@@ -121,6 +152,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
   .search-wrap{max-width:100%;min-width:0;flex:1}
   .toggle-wrap{margin-left:0}
   .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .lb-arrow.prev{left:-8px}
+  .lb-arrow.next{right:-8px}
 }
 </style>
 </head>
@@ -168,30 +201,60 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20
 
 <footer>Prices firm unless noted &nbsp;·&nbsp; Reach out directly to arrange pickup</footer>
 
+<!-- Lightbox -->
 <div class="lightbox" id="lightbox">
-  <button class="lb-close" id="lbClose">✕</button>
-  <img id="lbImg" src="" alt=""/>
-  <div class="lb-caption" id="lbCaption"></div>
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose">✕</button>
+    <div class="lb-img-wrap">
+      <button class="lb-arrow prev" id="lbPrev">&#8592;</button>
+      <img id="lbImg" src="" alt=""/>
+      <button class="lb-arrow next" id="lbNext">&#8594;</button>
+    </div>
+    <div class="lb-dots" id="lbDots"></div>
+    <div class="lb-caption" id="lbCaption"></div>
+    <div class="lb-email" id="lbEmail"></div>
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
+// ── CONFIG ─────────────────────────────────────────────────
+const CONTACT_EMAIL = 'alexlavar@icloud.com';
+// ───────────────────────────────────────────────────────────
+
 const EMOJI={'Furniture':'🪑','Electronics':'📺','Kitchen':'🍳','Lighting':'💡','Decor':'🪴','Clothing':'👕','Books':'📚','Tools':'🔧','Appliances':'🏠','Outdoor':'🌿','Sports':'⚽','Other':'📦'};
 
 let allItems=[],activeFilter='all',availOnly=false,sortMode='default',searchQuery='';
 
+// Lightbox state
+let lbPhotos=[],lbIndex=0,lbItemName='',lbPrice='';
+
 function condDot(c){const s=(c||'').toLowerCase();if(s==='fair')return'fair';if(s==='used')return'used';return''}
+
+function parsePhotos(raw){
+  if(!raw) return [];
+  return raw.split(',').map(s=>s.trim()).filter(Boolean);
+}
 
 function filtered(){
   let items=[...allItems];
   if(availOnly) items=items.filter(i=>!i.sold);
   if(activeFilter!=='all') items=items.filter(i=>i.category===activeFilter);
-  if(searchQuery){const q=searchQuery.toLowerCase();items=items.filter(i=>i.name.toLowerCase().includes(q)||(i.description||'').toLowerCase().includes(q)||(i.category||'').toLowerCase().includes(q))}
+  if(searchQuery){
+    const q=searchQuery.toLowerCase();
+    items=items.filter(i=>i.name.toLowerCase().includes(q)||(i.description||'').toLowerCase().includes(q)||(i.category||'').toLowerCase().includes(q));
+  }
   if(sortMode==='price-asc') items.sort((a,b)=>a.price-b.price);
   if(sortMode==='price-desc') items.sort((a,b)=>b.price-a.price);
   if(sortMode==='name-asc') items.sort((a,b)=>a.name.localeCompare(b.name));
   return items;
+}
+
+function emailLink(itemName){
+  const subject=encodeURIComponent(`Interested in: ${itemName}`);
+  const body=encodeURIComponent(`Hi,\n\nI'm interested in the "${itemName}" listed on your sale page. Is it still available?\n\nThanks`);
+  return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 }
 
 function render(){
@@ -199,16 +262,24 @@ function render(){
   const avail=allItems.filter(i=>!i.sold).length;
   document.getElementById('statNum').textContent=avail;
   const info=document.getElementById('resultsInfo');
-  info.textContent=items.length===allItems.length?`${items.length} item${items.length!==1?'s':''}`:`${items.length} of ${allItems.length} items`;
+  info.textContent=items.length===allItems.length
+    ?`${items.length} item${items.length!==1?'s':''}`
+    :`${items.length} of ${allItems.length} items`;
   const grid=document.getElementById('grid');
-  if(!items.length){grid.innerHTML=`<div class="state"><div class="state-icon">🔍</div><h2>No items found</h2><p>Try a different search or filter.</p></div>`;return}
+  if(!items.length){
+    grid.innerHTML=`<div class="state"><div class="state-icon">🔍</div><h2>No items found</h2><p>Try a different search or filter.</p></div>`;
+    return;
+  }
   grid.innerHTML=items.map((item,idx)=>{
-    const src=item.photo||'';
-    const hasImg=!!src;
-    const esc=s=>s.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    const photos=parsePhotos(item.photo);
+    const hasImg=photos.length>0;
+    const esc=s=>s.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');
+    const photosJson=JSON.stringify(photos).replace(/'/g,"\\'");
     return`<div class="card ${item.sold?'is-sold':''}" style="animation-delay:${Math.min(idx,12)*.04}s">
-      <div class="card-img"${hasImg?` onclick="openLightbox('${esc(src)}','${esc(item.name)}','$${Number(item.price).toLocaleString()}')"`:''}>
-        ${hasImg?`<img src="${src}" alt="${item.name}" loading="lazy"/><div class="zoom-hint">🔍 View full size</div>`:`<div class="no-img">${EMOJI[item.category]||'📦'}</div>`}
+      <div class="card-img"${hasImg?` onclick="openLightbox(${JSON.stringify(photos)},'${esc(item.name)}','$${Number(item.price).toLocaleString()}')"`:''}>
+        ${hasImg
+          ?`<img src="${photos[0]}" alt="${item.name}" loading="lazy"/><div class="zoom-hint">🔍 View${photos.length>1?' all photos':''}</div>${photos.length>1?`<div class="photo-count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>${photos.length}</div>`:''}`
+          :`<div class="no-img">${EMOJI[item.category]||'📦'}</div>`}
         ${item.sold?'<span class="sold-badge">Sold</span>':''}
         ${item.category?`<span class="cat-badge">${item.category}</span>`:''}
       </div>
@@ -219,7 +290,11 @@ function render(){
           <span class="price ${item.sold?'struck':''}">$${Number(item.price).toLocaleString()}</span>
           <div class="card-actions">
             ${item.condition?`<span class="condition"><span class="cond-dot ${condDot(item.condition)}"></span>${item.condition}</span>`:''}
-            <button class="share-btn" onclick="shareItem('${esc(item.name)}')" title="Copy link">
+            ${!item.sold?`<a class="icon-btn email-btn" href="${emailLink(item.name)}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Inquire
+            </a>`:'<span style="font-size:12px;color:var(--muted)">Sold</span>'}
+            <button class="icon-btn" onclick="shareItem('${esc(item.name)}')" title="Copy link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
             </button>
           </div>
@@ -247,7 +322,6 @@ document.getElementById('filterBar').addEventListener('click',e=>{
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');activeFilter=btn.dataset.filter;render();
 });
-
 document.getElementById('searchInput').addEventListener('input',e=>{searchQuery=e.target.value.trim();render()});
 document.getElementById('sortSelect').addEventListener('change',e=>{sortMode=e.target.value;render()});
 document.getElementById('availToggle').addEventListener('click',()=>{
@@ -256,31 +330,102 @@ document.getElementById('availToggle').addEventListener('click',()=>{
   render();
 });
 
-// Lightbox
-function openLightbox(src,name,price){
-  document.getElementById('lbImg').src=src;
-  document.getElementById('lbCaption').textContent=`${name} — ${price}`;
+// ── LIGHTBOX ───────────────────────────────────────────────
+function openLightbox(photos, name, price){
+  lbPhotos = typeof photos === 'string' ? JSON.parse(photos) : photos;
+  lbIndex  = 0;
+  lbItemName = name;
+  lbPrice    = price;
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow='hidden';
+  updateLightbox();
 }
+
+function updateLightbox(){
+  const img     = document.getElementById('lbImg');
+  const dots    = document.getElementById('lbDots');
+  const caption = document.getElementById('lbCaption');
+  const email   = document.getElementById('lbEmail');
+  const prev    = document.getElementById('lbPrev');
+  const next    = document.getElementById('lbNext');
+
+  img.src = lbPhotos[lbIndex];
+  img.alt = lbItemName;
+
+  // Arrows
+  prev.classList.toggle('hidden', lbPhotos.length <= 1);
+  next.classList.toggle('hidden', lbPhotos.length <= 1);
+  prev.style.opacity = lbIndex === 0 ? '0.3' : '1';
+  next.style.opacity = lbIndex === lbPhotos.length-1 ? '0.3' : '1';
+
+  // Dots
+  dots.innerHTML = lbPhotos.length > 1
+    ? lbPhotos.map((_,i)=>`<button class="lb-dot ${i===lbIndex?'active':''}" onclick="goToPhoto(${i})"></button>`).join('')
+    : '';
+
+  // Caption
+  caption.innerHTML = lbPhotos.length > 1
+    ? `<strong>${lbItemName}</strong> &nbsp;·&nbsp; ${lbPrice} &nbsp;·&nbsp; ${lbIndex+1} / ${lbPhotos.length}`
+    : `<strong>${lbItemName}</strong> &nbsp;·&nbsp; ${lbPrice}`;
+
+  // Email in lightbox
+  email.innerHTML = `<a href="${emailLink(lbItemName)}">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Email about this item
+  </a>`;
+}
+
+function goToPhoto(i){
+  lbIndex=i;updateLightbox();
+}
+
+document.getElementById('lbPrev').addEventListener('click',e=>{
+  e.stopPropagation();
+  if(lbIndex>0){lbIndex--;updateLightbox();}
+});
+document.getElementById('lbNext').addEventListener('click',e=>{
+  e.stopPropagation();
+  if(lbIndex<lbPhotos.length-1){lbIndex++;updateLightbox();}
+});
+
+// Keyboard nav
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lightbox').classList.contains('open'))return;
+  if(e.key==='Escape') closeLightbox();
+  if(e.key==='ArrowLeft' && lbIndex>0){lbIndex--;updateLightbox();}
+  if(e.key==='ArrowRight' && lbIndex<lbPhotos.length-1){lbIndex++;updateLightbox();}
+});
+
+// Touch swipe
+let touchStartX=0;
+document.getElementById('lightbox').addEventListener('touchstart',e=>{touchStartX=e.touches[0].clientX},{passive:true});
+document.getElementById('lightbox').addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-touchStartX;
+  if(Math.abs(dx)<40)return;
+  if(dx<0 && lbIndex<lbPhotos.length-1){lbIndex++;updateLightbox();}
+  if(dx>0 && lbIndex>0){lbIndex--;updateLightbox();}
+});
+
 function closeLightbox(){
   document.getElementById('lightbox').classList.remove('open');
   document.getElementById('lbImg').src='';
   document.body.style.overflow='';
 }
-document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget)closeLightbox()});
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget || e.target===document.getElementById('lightbox'))closeLightbox()});
 document.getElementById('lbClose').addEventListener('click',closeLightbox);
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
 
-// Share
+// ── SHARE ──────────────────────────────────────────────────
 function showToast(msg){
   const t=document.getElementById('toast');
   t.textContent=msg;t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),2200);
 }
+
 function shareItem(name){
   const url=`${location.href.split('?')[0]}?item=${encodeURIComponent(name)}`;
-  navigator.clipboard.writeText(url).then(()=>showToast(`Link copied — ${name}`)).catch(()=>showToast('Could not copy link'));
+  navigator.clipboard.writeText(url)
+    .then(()=>showToast(`Link copied — ${name}`))
+    .catch(()=>showToast('Could not copy link'));
 }
 
 // Deep link
@@ -288,11 +433,13 @@ function handleDeepLink(){
   const item=new URLSearchParams(location.search).get('item');
   if(!item)return;
   const match=allItems.find(i=>i.name===decodeURIComponent(item));
-  if(match?.photo) setTimeout(()=>openLightbox(match.photo,match.name,`$${match.price}`),300);
+  const photos=match?parsePhotos(match.photo):[];
+  if(photos.length) setTimeout(()=>openLightbox(photos,match.name,`$${match.price}`),400);
   const el=[...document.querySelectorAll('.card-name')].find(e=>e.textContent===decodeURIComponent(item));
-  if(el) el.closest('.card').scrollIntoView({behavior:'smooth',block:'center'});
+  if(el)el.closest('.card').scrollIntoView({behavior:'smooth',block:'center'});
 }
 
+// ── LOAD ───────────────────────────────────────────────────
 async function load(){
   try{
     const res=await fetch('items.json');
