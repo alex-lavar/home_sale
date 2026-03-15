@@ -1,9 +1,9 @@
 [
   {
     "name": "Concept2 Rowing Machine",
-    "price": 750,
+    "price": 500,
     "category": "Sports",
-    "description": "Concept2 rowing machine. Works great \u2014 a serious piece of equipment.",
+    "description": "Concept2 rowing machine. Works great.",
     "condition": "Used",
     "sold": false,
     "photo": ""
@@ -27,8 +27,8 @@
     "photo": ""
   },
   {
-    "name": "55\" Flat Screen TV (Basement)",
-    "price": 200,
+    "name": "LG 55\" Flat Screen TV OLED (Basement)",
+    "price": 450,
     "category": "Electronics",
     "description": "Flat screen TV on white media console in basement entertainment nook.",
     "condition": "Used",
@@ -36,8 +36,8 @@
     "photo": ""
   },
   {
-    "name": "55\" Samsung TV (Bedroom)",
-    "price": 300,
+    "name": "55\" Samsung TV OLED (Living)",
+    "price": 550,
     "category": "Electronics",
     "description": "Large Samsung flat screen TV. Includes soundbar.",
     "condition": "Used",
@@ -46,34 +46,25 @@
   },
   {
     "name": "Soundbar",
-    "price": 60,
+    "price": 100,
     "category": "Electronics",
-    "description": "Black soundbar.",
+    "description": "Soundbar with wireless sub.",
     "condition": "Used",
     "sold": false,
     "photo": ""
   },
   {
-    "name": "Hue / Smart Lights (Pair)",
-    "price": 50,
+    "name": "Phillips Hue / Smart Lights (Pair)",
+    "price": 100,
     "category": "Electronics",
-    "description": "Two smart color-changing light orbs used as TV accent lighting.",
-    "condition": "Used",
-    "sold": false,
-    "photo": ""
-  },
-  {
-    "name": "Camera Tripod",
-    "price": 35,
-    "category": "Electronics",
-    "description": "Black camera tripod.",
+    "description": "Two smart color-changing lights along with a Phillips Hub.",
     "condition": "Used",
     "sold": false,
     "photo": ""
   },
   {
     "name": "Beige Sectional Sofa (Main Floor)",
-    "price": 500,
+    "price": 250,
     "category": "Furniture",
     "description": "Large beige/tan sectional sofa in good condition. Very comfortable.",
     "condition": "Used",
@@ -82,7 +73,7 @@
   },
   {
     "name": "Beige Loveseat / Sofa (Main Floor)",
-    "price": 250,
+    "price": 150,
     "category": "Furniture",
     "description": "Matching beige loveseat to the sectional.",
     "condition": "Used",
@@ -91,16 +82,16 @@
   },
   {
     "name": "Green Sectional Sofa",
-    "price": 350,
+    "price": 500,
     "category": "Furniture",
-    "description": "Large olive green sectional sofa with chaise. Minor wear.",
+    "description": "Large olive green sectional sofa with chaise. Great Condition.",
     "condition": "Used",
     "sold": false,
     "photo": ""
   },
   {
-    "name": "Gray Accent Chair",
-    "price": 80,
+    "name": "Gray/Blue Ikea Accent Chair",
+    "price": 50,
     "category": "Furniture",
     "description": "Gray upholstered accent chair.",
     "condition": "Used",
@@ -108,8 +99,8 @@
     "photo": ""
   },
   {
-    "name": "Queen / King Bed Frame (Upholstered)",
-    "price": 200,
+    "name": "Satva Queen Bed with Frame (Upholstered)",
+    "price": 300,
     "category": "Furniture",
     "description": "Gray upholstered bed frame \u2014 tufted nailhead style.",
     "condition": "Used",
@@ -126,17 +117,8 @@
     "photo": ""
   },
   {
-    "name": "White Entertainment Center",
-    "price": 150,
-    "category": "Furniture",
-    "description": "White entertainment center with glass and wood door storage.",
-    "condition": "Used",
-    "sold": false,
-    "photo": ""
-  },
-  {
     "name": "Wood Coffee Table with Lower Shelf",
-    "price": 120,
+    "price": 60,
     "category": "Furniture",
     "description": "Rustic dark wood coffee table with lower shelf and cross-leg base.",
     "condition": "Used",
@@ -153,7 +135,7 @@
     "photo": ""
   },
   {
-    "name": "Dining Chairs (Set)",
+    "name": "Dining Chairs (Set of 4)",
     "price": 80,
     "category": "Furniture",
     "description": "Set of wooden dining chairs.",
@@ -175,15 +157,6 @@
     "price": 80,
     "category": "Furniture",
     "description": "Dark wood 5-tier corner ladder bookshelf.",
-    "condition": "Used",
-    "sold": false,
-    "photo": ""
-  },
-  {
-    "name": "Dark Wood Corner Ladder Shelf with Lamp",
-    "price": 100,
-    "category": "Furniture",
-    "description": "Corner ladder shelf with built-in floor lamp. Warm aesthetic.",
     "condition": "Used",
     "sold": false,
     "photo": ""
@@ -234,8 +207,8 @@
     "photo": ""
   },
   {
-    "name": "White Console Table (Bedroom)",
-    "price": 60,
+    "name": "White Console Table (Bedroom) Set of 2",
+    "price": 150,
     "category": "Furniture",
     "description": "White slim console table with single drawer and lower shelf.",
     "condition": "Used",
@@ -369,7 +342,7 @@
     "photo": ""
   },
   {
-    "name": "Full Length Mirror with LED Lighting",
+    "name": "Full Length Mirror with LED Lighting (Living Room)",
     "price": 80,
     "category": "Decor",
     "description": "White-framed full length floor mirror with LED accent lighting on back.",
@@ -378,7 +351,7 @@
     "photo": ""
   },
   {
-    "name": "Full Length Mirror (Bedroom)",
+    "name": "Full Length LED-Backlit Mirror (Bedroom)",
     "price": 60,
     "category": "Decor",
     "description": "White-framed full length mirror with LED backlighting.",
@@ -423,8 +396,8 @@
     "photo": ""
   },
   {
-    "name": "Knit Pouf / Footstool",
-    "price": 30,
+    "name": "Knit Pouf / Footstool (Set of 2)",
+    "price": 80,
     "category": "Decor",
     "description": "Small round knit pouf on wooden legs.",
     "condition": "Used",
@@ -531,7 +504,7 @@
     "photo": ""
   },
   {
-    "name": "Meditation Cushion / Floor Pouf",
+    "name": "Pink Meditation Cushion / Floor Pouf",
     "price": 30,
     "category": "Wellness",
     "description": "Brown/burgundy meditation floor cushion.",
@@ -558,16 +531,7 @@
     "photo": ""
   },
   {
-    "name": "White Air Purifier",
-    "price": 30,
-    "category": "Appliances",
-    "description": "Small white air purifier unit.",
-    "condition": "Used",
-    "sold": false,
-    "photo": ""
-  },
-  {
-    "name": "Space Heater",
+    "name": "Small Black Space Heater",
     "price": 25,
     "category": "Appliances",
     "description": "Small white tower space heater.",
@@ -585,8 +549,8 @@
     "photo": ""
   },
   {
-    "name": "Whiteboards (2)",
-    "price": 30,
+    "name": "Office Whiteboards (3)",
+    "price": 45,
     "category": "Office",
     "description": "Two large whiteboards.",
     "condition": "Used",
