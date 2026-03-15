@@ -1,38 +1,605 @@
 [
   {
-    "name": "55\" OLED TV",
-    "price": 700.0,
+    "name": "55\" Flat Screen TV (Basement)",
+    "price": 0,
     "category": "Electronics",
-    "description": "Fully functional 4K LG 55\" OLED TV.",
-    "condition": "Used",
-    "sold": true,
-    "photo": "IMG_5600.jpeg"
-  },
-  {
-    "name": "XBOX Series X",
-    "price": 300.0,
-    "category": "Electronics",
-    "description": "XBOX Series X — works great.",
+    "description": "Flat screen TV on white media console in basement entertainment nook.",
     "condition": "Used",
     "sold": false,
-    "photo": ""
+    "photo": "IMG_5570.JPG"
   },
   {
-    "name": "White Entertainment Center",
-    "price": 150.0,
+    "name": "White Media Console with Glass Doors",
+    "price": 0,
     "category": "Furniture",
-    "description": "White entertainment center with glass and wood door storage.",
+    "description": "White media cabinet with frosted glass doors and upper open shelf. Clean condition.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5570.JPG"
+  },
+  {
+    "name": "Gold Decorative Vase",
+    "price": 0,
+    "category": "Decor",
+    "description": "Gold accent vase displayed on media console.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5570.JPG"
+  },
+  {
+    "name": "White Air Purifier",
+    "price": 0,
+    "category": "Appliances",
+    "description": "Small white air purifier unit.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5570.JPG"
+  },
+  {
+    "name": "Navy Area Rug (Basement)",
+    "price": 0,
+    "category": "Decor",
+    "description": "Large navy blue area rug.",
     "condition": "Used",
     "sold": false,
     "photo": ""
   },
   {
-    "name": "Large Blue Carpet",
-    "price": 100.0,
-    "category": "Home",
-    "description": "Large Blue Carpet",
+    "name": "Green Sectional Sofa",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Large olive green sectional sofa with chaise. Minor wear.",
     "condition": "Used",
     "sold": false,
-    "photo": ""
+    "photo": "IMG_5571.JPG"
+  },
+  {
+    "name": "Gray Accent Chair",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Gray upholstered accent chair.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5571.JPG"
+  },
+  {
+    "name": "Wood Coffee Table with Lower Shelf",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Rustic dark wood coffee table with lower shelf and cross-leg base.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5571.JPG"
+  },
+  {
+    "name": "Concept2 Rowing Machine",
+    "price": 0,
+    "category": "Sports",
+    "description": "Concept2 rowing machine. Works great — a serious piece of equipment.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5573.JPG"
+  },
+  {
+    "name": "Exercise / Stability Ball",
+    "price": 0,
+    "category": "Sports",
+    "description": "Large black stability ball.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5573.JPG"
+  },
+  {
+    "name": "Kettlebells (Set)",
+    "price": 0,
+    "category": "Sports",
+    "description": "Set of two kettlebells visible in gym room.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5573.JPG"
+  },
+  {
+    "name": "Gym Floor Mat",
+    "price": 0,
+    "category": "Sports",
+    "description": "Large black interlocking foam gym floor mat.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5573.JPG"
+  },
+  {
+    "name": "Large Monstera Plant",
+    "price": 0,
+    "category": "Decor",
+    "description": "Tall thriving monstera plant in black pot. Great statement piece.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5573.JPG"
+  },
+  {
+    "name": "Crystal Singing Bowl Set (7 bowls)",
+    "price": 0,
+    "category": "Wellness",
+    "description": "Full 7-piece crystal singing bowl set with mallets and carrying case. Tuned to chakra scale.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5572.JPG"
+  },
+  {
+    "name": "Arched Floor Mirror (Meditation Room)",
+    "price": 0,
+    "category": "Decor",
+    "description": "Arched mirror with natural/cream frame. Leaning style.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5572.JPG"
+  },
+  {
+    "name": "Portable Steam Sauna",
+    "price": 0,
+    "category": "Wellness",
+    "description": "Portable personal steam sauna tent with chair insert. Includes controller.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5572.JPG"
+  },
+  {
+    "name": "Meditation Cushion / Floor Pouf",
+    "price": 0,
+    "category": "Wellness",
+    "description": "Brown/burgundy meditation floor cushion.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5572.JPG"
+  },
+  {
+    "name": "Beige Sectional Sofa (Main Floor)",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Large beige/tan sectional sofa in good condition. Very comfortable.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5584.JPG"
+  },
+  {
+    "name": "Beige Loveseat / Sofa (Main Floor)",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Matching beige loveseat to the sectional.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5584.JPG"
+  },
+  {
+    "name": "Large Shag Area Rug",
+    "price": 0,
+    "category": "Decor",
+    "description": "Large cream and gray shag area rug with geometric pattern.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5584.JPG"
+  },
+  {
+    "name": "Square Storage Ottoman",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Gray corduroy square ottoman with wooden serving tray on top.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5584.JPG"
+  },
+  {
+    "name": "Wooden Serving Tray",
+    "price": 0,
+    "category": "Decor",
+    "description": "Rectangular wooden serving/coffee tray.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5584.JPG"
+  },
+  {
+    "name": "Round Dining Table",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Small round dark wood dining table visible in background.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5584.JPG"
+  },
+  {
+    "name": "Dining Chairs (Set)",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Wooden dining chairs visible near round table.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5584.JPG"
+  },
+  {
+    "name": "Ladder Shelf with Lamp",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Wooden ladder-style shelf with built-in floor lamp. Warm aesthetic.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5584.JPG"
+  },
+  {
+    "name": "Full Length Mirror with LED Lighting",
+    "price": 0,
+    "category": "Decor",
+    "description": "White-framed full length floor mirror with LED accent lighting on back.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5584.JPG"
+  },
+  {
+    "name": "Large Abstract Canvas Wall Art",
+    "price": 0,
+    "category": "Decor",
+    "description": "Large neutral-toned abstract canvas painting. Light gray and beige tones.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5585.JPG"
+  },
+  {
+    "name": "Knit Pouf / Footstool",
+    "price": 0,
+    "category": "Decor",
+    "description": "Small round knit pouf on wooden legs.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5585.JPG"
+  },
+  {
+    "name": "Gray Dresser with Open Shelving",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Gray wood-tone dresser with drawer unit and open cube shelving above.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5594.JPG"
+  },
+  {
+    "name": "Full Length Mirror (Closet)",
+    "price": 0,
+    "category": "Decor",
+    "description": "Silver/gray framed full length leaning mirror.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5594.JPG"
+  },
+  {
+    "name": "Yoga Mats (2)",
+    "price": 0,
+    "category": "Sports",
+    "description": "Two yoga mats — one pink rolled mat and one gray.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5574.JPG"
+  },
+  {
+    "name": "Adjustable Dumbbells / Weight Set",
+    "price": 0,
+    "category": "Sports",
+    "description": "Set of adjustable dumbbells with additional weight plates.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5574.JPG"
+  },
+  {
+    "name": "Vacuum Cleaner",
+    "price": 0,
+    "category": "Appliances",
+    "description": "Upright vacuum cleaner.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5574.JPG"
+  },
+  {
+    "name": "Yoga Block",
+    "price": 0,
+    "category": "Sports",
+    "description": "Teal foam yoga block.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5574.JPG"
+  },
+  {
+    "name": "Small Wood Storage Unit",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Small open wood shelf / storage cube unit.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5574.JPG"
+  },
+  {
+    "name": "Queen / King Bed Frame (Upholstered)",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Gray upholstered bed frame — tufted nailhead style.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5588.JPG"
+  },
+  {
+    "name": "White Vanity Table",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Small white single-drawer vanity table.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5588.JPG"
+  },
+  {
+    "name": "Blackout Curtains (Bedroom Set)",
+    "price": 0,
+    "category": "Decor",
+    "description": "Set of navy blackout curtain panels with rods.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5588.JPG"
+  },
+  {
+    "name": "Triple Arc Floor Lamp",
+    "price": 0,
+    "category": "Lighting",
+    "description": "Black arc floor lamp with three linen drum shades.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5607.JPG"
+  },
+  {
+    "name": "Octagon Wall Mirror",
+    "price": 0,
+    "category": "Decor",
+    "description": "Gold/silver octagon-shaped wall mirror.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5607.JPG"
+  },
+  {
+    "name": "Black Console / Writing Desk",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Sleek black console desk with single drawer.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5607.JPG"
+  },
+  {
+    "name": "Wooden Crate",
+    "price": 0,
+    "category": "Decor",
+    "description": "Decorative wood crate used as side storage.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5607.JPG"
+  },
+  {
+    "name": "Whiteboards (2)",
+    "price": 0,
+    "category": "Office",
+    "description": "Two large whiteboards — assorted sizes with sticky note content.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5607.JPG"
+  },
+  {
+    "name": "Round Side Table / Nightstand (Dark Wood)",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Small dark wood round side table with lower shelf.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5606.JPG"
+  },
+  {
+    "name": "Table Lamp (Ceramic Base)",
+    "price": 0,
+    "category": "Lighting",
+    "description": "Table lamp with ceramic textured base and warm shade.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5606.JPG"
+  },
+  {
+    "name": "Space Heater",
+    "price": 0,
+    "category": "Appliances",
+    "description": "Small white tower space heater.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5606.JPG"
+  },
+  {
+    "name": "White and Walnut Cabinet (Low)",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Low modern cabinet with white body and walnut-toned slatted sliding door.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5576.JPG"
+  },
+  {
+    "name": "Rope Storage Basket",
+    "price": 0,
+    "category": "Decor",
+    "description": "Large woven rope storage basket.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5576.JPG"
+  },
+  {
+    "name": "Tall White Wardrobe Cabinet",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Tall all-white freestanding wardrobe with doors.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5596.JPG"
+  },
+  {
+    "name": "White Cube Shelving Unit (4-cube)",
+    "price": 0,
+    "category": "Furniture",
+    "description": "White 4-cube organizer shelf unit.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5596.JPG"
+  },
+  {
+    "name": "Camera Tripod",
+    "price": 0,
+    "category": "Electronics",
+    "description": "Black camera tripod.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5596.JPG"
+  },
+  {
+    "name": "Portable Personal Steam Sauna",
+    "price": 0,
+    "category": "Wellness",
+    "description": "Full portable steam sauna enclosure with fold-out chair and timer controller.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5598.JPG"
+  },
+  {
+    "name": "Digital Bathroom Scale",
+    "price": 0,
+    "category": "Wellness",
+    "description": "White digital bathroom scale.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5598.JPG"
+  },
+  {
+    "name": "Small Black Side Table",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Small black two-tier side table.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5598.JPG"
+  },
+  {
+    "name": "55\" Samsung TV (Bedroom)",
+    "price": 0,
+    "category": "Electronics",
+    "description": "Large Samsung flat screen TV wall-mounted. Includes soundbar below.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5595.JPG"
+  },
+  {
+    "name": "Soundbar",
+    "price": 0,
+    "category": "Electronics",
+    "description": "Black soundbar displayed below bedroom TV.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5595.JPG"
+  },
+  {
+    "name": "White Cube Storage Shelf with Fabric Bins",
+    "price": 0,
+    "category": "Furniture",
+    "description": "White 8-cube storage shelf with gray fabric bin inserts.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5595.JPG"
+  },
+  {
+    "name": "Hue / Smart Lights (Pair)",
+    "price": 0,
+    "category": "Electronics",
+    "description": "Two smart color-changing light orbs used as TV accent lighting.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5595.JPG"
+  },
+  {
+    "name": "5-Tier Corner Ladder Shelf",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Dark wood 5-tier corner ladder bookshelf.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5589.JPG"
+  },
+  {
+    "name": "Floor Lamp with Drum Shade",
+    "price": 0,
+    "category": "Lighting",
+    "description": "Silver pole floor lamp with gray drum shade and pull chain.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5589.JPG"
+  },
+  {
+    "name": "Shoe Storage Organizer (Wall Unit)",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Large white wall-mounted shoe cubby organizer with multiple slots.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5575.JPG"
+  },
+  {
+    "name": "White Wardrobe Cabinet (Bedroom)",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Tall white two-door wardrobe cabinet.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5575.JPG"
+  },
+  {
+    "name": "Ocean / Seascape Canvas Painting",
+    "price": 0,
+    "category": "Decor",
+    "description": "Original or print canvas painting — teal and blue ocean/sky scene.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5586.JPG"
+  },
+  {
+    "name": "White Console Table (Bedroom)",
+    "price": 0,
+    "category": "Furniture",
+    "description": "White slim console table with single drawer and lower shelf.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5586.JPG"
+  },
+  {
+    "name": "Full Length Mirror (Bedroom)",
+    "price": 0,
+    "category": "Decor",
+    "description": "White-framed full length mirror with LED backlighting.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5586.JPG"
+  },
+  {
+    "name": "Small Electric Fan",
+    "price": 0,
+    "category": "Appliances",
+    "description": "Small white desktop/tabletop fan.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5586.JPG"
+  },
+  {
+    "name": "Dark Wood 5-Tier Corner Ladder Shelf with Lamp",
+    "price": 0,
+    "category": "Furniture",
+    "description": "Corner ladder shelf with built-in floor lamp.",
+    "condition": "Used",
+    "sold": false,
+    "photo": "IMG_5587.JPG"
   }
 ]
