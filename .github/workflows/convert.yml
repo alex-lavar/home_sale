@@ -24,9 +24,14 @@ jobs:
               name = row.get('Name','').strip()
               if not name:
                 continue
+              raw_price = row.get('Price','').replace('$','').strip()
+              try:
+                price = float(raw_price)
+              except ValueError:
+                price = 0
               items.append({
                 'name':        name,
-                'price':       float(row.get('Price','0').replace('$','').strip() or 0),
+                'price':       price,
                 'category':    row.get('Category','').strip(),
                 'description': row.get('Description','').strip(),
                 'condition':   row.get('Condition','').strip(),
