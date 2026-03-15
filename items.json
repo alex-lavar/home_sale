@@ -1,0 +1,29 @@
+[
+  {
+    "name": "55\" OLED TV",
+    "price": 700.0,
+    "category": "Electronics",
+    "description": "Fully functional 4K LG 55\" OLED TV.",
+    "condition": "Used",
+    "sold": false,
+    "photo": ""
+  },
+  {
+    "name": "XBOX Series X",
+    "price": 300.0,
+    "category": "Electronics",
+    "description": "XBOX Series X — works great.",
+    "condition": "Used",
+    "sold": false,
+    "photo": ""
+  },
+  {
+    "name": "White Entertainment Center",
+    "price": 150.0,
+    "category": "Furniture",
+    "description": "White entertainment center with glass and wood door storage.",
+    "condition": "Used",
+    "sold": false,
+    "photo": ""
+  }
+]
