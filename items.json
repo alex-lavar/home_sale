@@ -25,5 +25,14 @@
     "condition": "Used",
     "sold": false,
     "photo": ""
+  },
+  {
+    "name": "Large Blue Carpet",
+    "price": 100.0,
+    "category": "Home",
+    "description": "Large Blue Carpet",
+    "condition": "Used",
+    "sold": false,
+    "photo": ""
   }
 ]
