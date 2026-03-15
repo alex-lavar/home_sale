@@ -1,0 +1,49 @@
+name: Convert CSV to JSON
+
+on:
+  push:
+    paths:
+      - 'items.csv'
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Convert CSV to JSON
+        run: |
+          python3 - <<'EOF'
+          import csv, json
+
+          items = []
+          with open('items.csv', newline='', encoding='utf-8') as f:
+            for row in csv.DictReader(f):
+              name = row.get('Name','').strip()
+              if not name:
+                continue
+              items.append({
+                'name':        name,
+                'price':       float(row.get('Price','0').replace('$','').strip() or 0),
+                'category':    row.get('Category','').strip(),
+                'description': row.get('Description','').strip(),
+                'condition':   row.get('Condition','').strip(),
+                'sold':        row.get('Sold','').strip().lower() in ('true','yes','1'),
+                'photo':       row.get('Photo','').strip(),
+              })
+
+          with open('items.json', 'w', encoding='utf-8') as f:
+            json.dump(items, f, indent=2, ensure_ascii=False)
+
+          print(f"Converted {len(items)} items to items.json")
+          EOF
+
+      - name: Commit items.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add items.json
+          git diff --staged --quiet || git commit -m "Auto-update items.json from items.csv"
+          git push
