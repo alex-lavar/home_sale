@@ -7,473 +7,302 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --ink:       #1c1208;
-  --cream:     #faf6ee;
-  --warm:      #f5ede0;
-  --border:    rgba(28,18,8,0.1);
-  --muted:     #8a7060;
-  --accent:    #c4622d;
-  --accent-lt: #f2ddd0;
-  --sage:      #6b7c5e;
-  --shadow-sm: 0 2px 12px rgba(28,18,8,0.07);
-  --shadow-lg: 0 16px 48px rgba(28,18,8,0.13);
+  --ink:        #1c1208;
+  --cream:      #faf6ee;
+  --warm:       #f5ede0;
+  --border:     rgba(28,18,8,0.1);
+  --muted:      #8a7060;
+  --accent:     #c4622d;
+  --accent-lt:  #f2ddd0;
+  --sage:       #6b7c5e;
+  --shadow-sm:  0 2px 12px rgba(28,18,8,0.07);
+  --shadow-lg:  0 16px 48px rgba(28,18,8,0.14);
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* HEADER */
+header{position:relative;z-index:1;padding:64px 40px 40px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5.5vw,4.8rem);font-weight:400;line-height:1.05}
+h1 em{font-style:italic;color:var(--muted)}
+.header-stats{text-align:right;padding-bottom:6px;line-height:1}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:400;display:block;color:var(--ink)}
+.stat-label{font-size:12px;color:var(--muted);margin-top:4px;display:block}
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
-  color: var(--ink);
-  min-height: 100vh;
-}
+/* TOOLBAR */
+.toolbar{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:18px 40px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--border)}
+.search-wrap{position:relative;flex:1;min-width:180px;max-width:300px}
+.search-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--muted);pointer-events:none}
+#searchInput{width:100%;padding:9px 12px 9px 34px;border:1px solid var(--border);border-radius:100px;background:#fff;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;transition:border-color .18s}
+#searchInput:focus{border-color:var(--ink)}
+#searchInput::placeholder{color:var(--muted)}
+#sortSelect{padding:9px 32px 9px 14px;border:1px solid var(--border);border-radius:100px;background:#fff;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);cursor:pointer;outline:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a7060' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;transition:border-color .18s}
+#sortSelect:focus{border-color:var(--ink)}
+.toggle-wrap{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;margin-left:auto}
+.toggle-wrap span{font-size:13px;color:var(--muted);white-space:nowrap}
+.toggle{width:36px;height:20px;background:rgba(28,18,8,0.15);border-radius:100px;position:relative;transition:background .2s;flex-shrink:0}
+.toggle::after{content:'';position:absolute;width:14px;height:14px;background:#fff;border-radius:50%;top:3px;left:3px;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.toggle.on{background:var(--ink)}
+.toggle.on::after{transform:translateX(16px)}
 
-/* Grain overlay */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 999;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-}
+/* FILTER BAR */
+.filter-bar{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:14px 40px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border)}
+.filter-label{font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.filter-btn{padding:6px 14px;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12.5px;cursor:pointer;transition:all .15s;white-space:nowrap}
+.filter-btn:hover{border-color:var(--ink);color:var(--ink)}
+.filter-btn.active{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.filter-count{font-size:10px;opacity:.6;margin-left:2px}
 
-/* ── HEADER ── */
-header {
-  padding: 72px 32px 48px;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 24px;
-  border-bottom: 1px solid var(--border);
-}
+/* GRID */
+.grid-wrap{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:28px 40px 100px}
+.results-info{font-size:12px;color:var(--muted);margin-bottom:18px;letter-spacing:.04em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
 
-.header-left {}
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s;animation:rise .4s ease both}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.card.is-sold{opacity:.55}
+.card.is-sold:hover{transform:none;box-shadow:var(--shadow-sm)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
-.eyebrow {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
+.card-img{position:relative;padding-top:68%;background:var(--warm);overflow:hidden;cursor:pointer}
+.card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .card-img img{transform:scale(1.05)}
+.no-img{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:.2;cursor:default}
+.zoom-hint{position:absolute;bottom:10px;right:10px;background:rgba(28,18,8,.55);color:#fff;border-radius:6px;padding:4px 8px;font-size:11px;opacity:0;transition:opacity .2s;pointer-events:none;backdrop-filter:blur(4px)}
+.card:hover .zoom-hint{opacity:1}
+.sold-badge{position:absolute;top:12px;right:12px;background:var(--ink);color:var(--cream);font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:5px 11px;border-radius:100px}
+.cat-badge{position:absolute;bottom:10px;left:10px;background:rgba(250,246,238,.92);color:var(--muted);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px;backdrop-filter:blur(6px)}
 
-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 400;
-  line-height: 1.05;
-  color: var(--ink);
-}
+.card-body{padding:16px 18px 18px}
+.card-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;line-height:1.2;margin-bottom:6px}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:14px;min-height:34px}
+.card-foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border);gap:8px}
+.price{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:600;color:var(--accent);line-height:1;flex-shrink:0}
+.price.struck{color:var(--muted);text-decoration:line-through;font-size:1.2rem}
+.card-actions{display:flex;align-items:center;gap:6px}
+.condition{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.cond-dot{width:6px;height:6px;border-radius:50%;background:var(--sage);flex-shrink:0}
+.cond-dot.used{background:var(--muted)}
+.cond-dot.fair{background:var(--accent)}
+.share-btn{background:none;border:1px solid var(--border);border-radius:6px;padding:5px 7px;cursor:pointer;color:var(--muted);transition:all .15s;display:flex;align-items:center;justify-content:center}
+.share-btn:hover{border-color:var(--ink);color:var(--ink)}
+.share-btn svg{width:13px;height:13px}
 
-h1 em {
-  font-style: italic;
-  color: var(--muted);
-}
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(28,18,8,.92);align-items:center;justify-content:center;padding:24px;cursor:zoom-out;backdrop-filter:blur(8px)}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(92vw,1100px);max-height:88vh;object-fit:contain;border-radius:8px;box-shadow:0 32px 80px rgba(0,0,0,.5);cursor:default;animation:lbIn .2s ease}
+@keyframes lbIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+.lb-close{position:absolute;top:20px;right:24px;background:none;border:none;color:rgba(255,255,255,.7);font-size:2rem;cursor:pointer;line-height:1;transition:color .15s}
+.lb-close:hover{color:#fff}
+.lb-caption{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.65);font-size:13px;white-space:nowrap}
 
-.header-right {
-  text-align: right;
-  padding-bottom: 8px;
-}
+/* TOAST */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:100px;font-size:13px;opacity:0;transition:all .25s;pointer-events:none;z-index:2000;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-.item-count {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.6;
-}
+/* STATES */
+.state{grid-column:1/-1;text-align:center;padding:80px 24px}
+.state-icon{font-size:3rem;margin-bottom:16px;opacity:.25}
+.state h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;margin-bottom:8px}
+.state p{font-size:14px;color:var(--muted)}
+.spinner{width:30px;height:30px;border:2.5px solid var(--accent-lt);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 14px}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-.item-count strong {
-  display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.4rem;
-  font-weight: 400;
-  color: var(--ink);
-  line-height: 1;
-}
+footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:20px 40px;text-align:center;font-size:12px;color:var(--muted);letter-spacing:.05em}
 
-/* ── FILTERS ── */
-.filter-bar {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 24px 32px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.filter-label {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-right: 4px;
-}
-
-.filter-btn {
-  padding: 7px 16px;
-  border-radius: 100px;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--muted);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  cursor: pointer;
-  transition: all 0.18s ease;
-  white-space: nowrap;
-}
-
-.filter-btn:hover { border-color: var(--ink); color: var(--ink); }
-
-.filter-btn.active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--cream);
-}
-
-/* ── GRID ── */
-.grid-wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 8px 32px 96px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-}
-
-/* ── CARDS ── */
-.card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  animation: rise 0.45s ease both;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.card.is-sold { opacity: 0.6; }
-.card.is-sold:hover { transform: none; box-shadow: var(--shadow-sm); }
-
-@keyframes rise {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.card:nth-child(1)  { animation-delay: 0.03s }
-.card:nth-child(2)  { animation-delay: 0.06s }
-.card:nth-child(3)  { animation-delay: 0.09s }
-.card:nth-child(4)  { animation-delay: 0.12s }
-.card:nth-child(5)  { animation-delay: 0.15s }
-.card:nth-child(6)  { animation-delay: 0.18s }
-.card:nth-child(7)  { animation-delay: 0.21s }
-.card:nth-child(8)  { animation-delay: 0.24s }
-.card:nth-child(9)  { animation-delay: 0.27s }
-.card:nth-child(10) { animation-delay: 0.30s }
-
-/* Image */
-.card-img {
-  position: relative;
-  padding-top: 68%;
-  background: var(--warm);
-  overflow: hidden;
-}
-
-.card-img img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.card:hover .card-img img { transform: scale(1.05); }
-
-.no-img {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  opacity: 0.25;
-}
-
-.sold-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: var(--ink);
-  color: var(--cream);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 5px 11px;
-  border-radius: 100px;
-}
-
-.cat-badge {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: rgba(250,246,238,0.92);
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 100px;
-  backdrop-filter: blur(6px);
-}
-
-/* Body */
-.card-body {
-  padding: 18px 20px 20px;
-}
-
-.card-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  line-height: 1.25;
-  margin-bottom: 6px;
-}
-
-.card-desc {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.55;
-  margin-bottom: 16px;
-  min-height: 36px;
-}
-
-.card-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
-}
-
-.price {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.7rem;
-  font-weight: 600;
-  color: var(--accent);
-  line-height: 1;
-}
-
-.price.struck {
-  color: var(--muted);
-  text-decoration: line-through;
-  font-size: 1.3rem;
-}
-
-.condition {
-  font-size: 12px;
-  color: var(--muted);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.cond-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--sage);
-  flex-shrink: 0;
-}
-
-.cond-dot.used { background: var(--muted); }
-.cond-dot.fair { background: var(--accent); }
-
-/* ── STATES ── */
-.state {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 80px 24px;
-}
-
-.state-icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.3; }
-
-.state h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 8px;
-}
-
-.state p { font-size: 14px; color: var(--muted); }
-
-.spinner {
-  width: 32px; height: 32px;
-  border: 2.5px solid var(--accent-lt);
-  border-top-color: var(--accent);
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
-  margin: 0 auto 16px;
-}
-
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* ── FOOTER ── */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 20px 32px;
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: 0.06em;
-}
-
-@media (max-width: 640px) {
-  header { grid-template-columns: 1fr; padding: 48px 20px 32px; }
-  .header-right { text-align: left; }
-  .filter-bar, .grid-wrap { padding-left: 20px; padding-right: 20px; }
-  .grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-}
-
-@media (max-width: 420px) {
-  .grid { grid-template-columns: 1fr; }
+@media(max-width:680px){
+  header{grid-template-columns:1fr;padding:44px 20px 28px}
+  .header-stats{text-align:left}
+  .toolbar,.filter-bar,.grid-wrap{padding-left:20px;padding-right:20px}
+  .search-wrap{max-width:100%;min-width:0;flex:1}
+  .toggle-wrap{margin-left:0}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="header-left">
+  <div>
     <p class="eyebrow">Everything must go</p>
     <h1>Good things,<br/><em>new homes.</em></h1>
   </div>
-  <div class="header-right">
-    <div class="item-count">
-      <strong id="countNum">—</strong>
-      items available
-    </div>
+  <div class="header-stats">
+    <strong class="stat-num" id="statNum">—</strong>
+    <span class="stat-label">items available</span>
   </div>
 </header>
 
-<div class="filter-bar">
-  <span class="filter-label">Filter</span>
+<div class="toolbar">
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input id="searchInput" type="text" placeholder="Search items…" autocomplete="off"/>
+  </div>
+  <select id="sortSelect">
+    <option value="default">Sort: Default</option>
+    <option value="price-asc">Price: Low to High</option>
+    <option value="price-desc">Price: High to Low</option>
+    <option value="name-asc">Name: A → Z</option>
+  </select>
+  <label class="toggle-wrap" id="availToggle">
+    <span>Available only</span>
+    <div class="toggle" id="toggleEl"></div>
+  </label>
+</div>
+
+<div class="filter-bar" id="filterBar">
+  <span class="filter-label">Category</span>
   <button class="filter-btn active" data-filter="all">All</button>
 </div>
 
 <div class="grid-wrap">
+  <div class="results-info" id="resultsInfo"></div>
   <div class="grid" id="grid">
-    <div class="state">
-      <div class="spinner"></div>
-      <p>Loading listings…</p>
-    </div>
+    <div class="state"><div class="spinner"></div><p>Loading listings…</p></div>
   </div>
 </div>
 
 <footer>Prices firm unless noted &nbsp;·&nbsp; Reach out directly to arrange pickup</footer>
 
-<script>
-const EMOJI = {
-  'Furniture':'🪑','Electronics':'📺','Kitchen':'🍳','Lighting':'💡',
-  'Decor':'🪴','Clothing':'👕','Books':'📚','Tools':'🔧',
-  'Appliances':'🏠','Outdoor':'🌿','Sports':'⚽','Other':'📦'
-};
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose">✕</button>
+  <img id="lbImg" src="" alt=""/>
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
 
-function condDot(c) {
-  const s = (c||'').toLowerCase();
-  if (s === 'fair') return 'fair';
-  if (s === 'used') return 'used';
-  return '';
+<div class="toast" id="toast"></div>
+
+<script>
+const EMOJI={'Furniture':'🪑','Electronics':'📺','Kitchen':'🍳','Lighting':'💡','Decor':'🪴','Clothing':'👕','Books':'📚','Tools':'🔧','Appliances':'🏠','Outdoor':'🌿','Sports':'⚽','Other':'📦'};
+
+let allItems=[],activeFilter='all',availOnly=false,sortMode='default',searchQuery='';
+
+function condDot(c){const s=(c||'').toLowerCase();if(s==='fair')return'fair';if(s==='used')return'used';return''}
+
+function filtered(){
+  let items=[...allItems];
+  if(availOnly) items=items.filter(i=>!i.sold);
+  if(activeFilter!=='all') items=items.filter(i=>i.category===activeFilter);
+  if(searchQuery){const q=searchQuery.toLowerCase();items=items.filter(i=>i.name.toLowerCase().includes(q)||(i.description||'').toLowerCase().includes(q)||(i.category||'').toLowerCase().includes(q))}
+  if(sortMode==='price-asc') items.sort((a,b)=>a.price-b.price);
+  if(sortMode==='price-desc') items.sort((a,b)=>b.price-a.price);
+  if(sortMode==='name-asc') items.sort((a,b)=>a.name.localeCompare(b.name));
+  return items;
 }
 
-let allItems = [];
-
-function renderCards(items) {
-  const grid = document.getElementById('grid');
-  const available = items.filter(i => !i.sold).length;
-  document.getElementById('countNum').textContent = available;
-
-  if (!items.length) {
-    grid.innerHTML = `<div class="state">
-      <div class="state-icon">🏡</div>
-      <h2>Nothing here yet</h2>
-      <p>Check back soon.</p>
-    </div>`;
-    return;
-  }
-
-  grid.innerHTML = items.map((item, idx) => `
-    <div class="card ${item.sold ? 'is-sold' : ''}" style="animation-delay:${idx * 0.04}s">
-      <div class="card-img">
-        ${item.photo
-          ? `<img src="${item.photo}" alt="${item.name}" loading="lazy"/>`
-          : `<div class="no-img">${EMOJI[item.category] || '📦'}</div>`}
-        ${item.sold ? `<span class="sold-badge">Sold</span>` : ''}
-        ${item.category ? `<span class="cat-badge">${item.category}</span>` : ''}
+function render(){
+  const items=filtered();
+  const avail=allItems.filter(i=>!i.sold).length;
+  document.getElementById('statNum').textContent=avail;
+  const info=document.getElementById('resultsInfo');
+  info.textContent=items.length===allItems.length?`${items.length} item${items.length!==1?'s':''}`:`${items.length} of ${allItems.length} items`;
+  const grid=document.getElementById('grid');
+  if(!items.length){grid.innerHTML=`<div class="state"><div class="state-icon">🔍</div><h2>No items found</h2><p>Try a different search or filter.</p></div>`;return}
+  grid.innerHTML=items.map((item,idx)=>{
+    const src=item.photo||'';
+    const hasImg=!!src;
+    const esc=s=>s.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    return`<div class="card ${item.sold?'is-sold':''}" style="animation-delay:${Math.min(idx,12)*.04}s">
+      <div class="card-img"${hasImg?` onclick="openLightbox('${esc(src)}','${esc(item.name)}','$${Number(item.price).toLocaleString()}')"`:''}>
+        ${hasImg?`<img src="${src}" alt="${item.name}" loading="lazy"/><div class="zoom-hint">🔍 View full size</div>`:`<div class="no-img">${EMOJI[item.category]||'📦'}</div>`}
+        ${item.sold?'<span class="sold-badge">Sold</span>':''}
+        ${item.category?`<span class="cat-badge">${item.category}</span>`:''}
       </div>
       <div class="card-body">
         <div class="card-name">${item.name}</div>
-        <div class="card-desc">${item.description || ''}</div>
+        <div class="card-desc">${item.description||''}</div>
         <div class="card-foot">
-          <span class="price ${item.sold ? 'struck' : ''}">$${Number(item.price).toLocaleString()}</span>
-          ${item.condition ? `<span class="condition"><span class="cond-dot ${condDot(item.condition)}"></span>${item.condition}</span>` : ''}
+          <span class="price ${item.sold?'struck':''}">$${Number(item.price).toLocaleString()}</span>
+          <div class="card-actions">
+            ${item.condition?`<span class="condition"><span class="cond-dot ${condDot(item.condition)}"></span>${item.condition}</span>`:''}
+            <button class="share-btn" onclick="shareItem('${esc(item.name)}')" title="Copy link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
-function buildFilters(items) {
-  const bar = document.querySelector('.filter-bar');
-  const cats = [...new Set(items.map(i => i.category).filter(Boolean))].sort();
-  cats.forEach(cat => {
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn';
-    btn.dataset.filter = cat;
-    btn.textContent = cat;
+function buildFilters(){
+  const bar=document.getElementById('filterBar');
+  bar.querySelectorAll('[data-filter]:not([data-filter="all"])').forEach(b=>b.remove());
+  bar.querySelector('[data-filter="all"]').innerHTML=`All <span class="filter-count">(${allItems.length})</span>`;
+  [...new Set(allItems.map(i=>i.category).filter(Boolean))].sort().forEach(cat=>{
+    const count=allItems.filter(i=>i.category===cat).length;
+    const btn=document.createElement('button');
+    btn.className='filter-btn';btn.dataset.filter=cat;
+    btn.innerHTML=`${cat} <span class="filter-count">(${count})</span>`;
     bar.appendChild(btn);
   });
-
-  bar.addEventListener('click', e => {
-    const btn = e.target.closest('.filter-btn');
-    if (!btn) return;
-    bar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    renderCards(f === 'all' ? allItems : allItems.filter(i => i.category === f));
-  });
 }
 
-async function load() {
-  try {
-    const res = await fetch('items.json');
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    allItems = await res.json();
-    buildFilters(allItems);
-    renderCards(allItems);
-  } catch (err) {
-    document.getElementById('grid').innerHTML = `<div class="state">
-      <div class="state-icon">⚠️</div>
-      <h2>Couldn't load listings</h2>
-      <p>${err.message}</p>
-    </div>`;
+document.getElementById('filterBar').addEventListener('click',e=>{
+  const btn=e.target.closest('.filter-btn');if(!btn)return;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');activeFilter=btn.dataset.filter;render();
+});
+
+document.getElementById('searchInput').addEventListener('input',e=>{searchQuery=e.target.value.trim();render()});
+document.getElementById('sortSelect').addEventListener('change',e=>{sortMode=e.target.value;render()});
+document.getElementById('availToggle').addEventListener('click',()=>{
+  availOnly=!availOnly;
+  document.getElementById('toggleEl').classList.toggle('on',availOnly);
+  render();
+});
+
+// Lightbox
+function openLightbox(src,name,price){
+  document.getElementById('lbImg').src=src;
+  document.getElementById('lbCaption').textContent=`${name} — ${price}`;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lbImg').src='';
+  document.body.style.overflow='';
+}
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget)closeLightbox()});
+document.getElementById('lbClose').addEventListener('click',closeLightbox);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
+
+// Share
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+function shareItem(name){
+  const url=`${location.href.split('?')[0]}?item=${encodeURIComponent(name)}`;
+  navigator.clipboard.writeText(url).then(()=>showToast(`Link copied — ${name}`)).catch(()=>showToast('Could not copy link'));
+}
+
+// Deep link
+function handleDeepLink(){
+  const item=new URLSearchParams(location.search).get('item');
+  if(!item)return;
+  const match=allItems.find(i=>i.name===decodeURIComponent(item));
+  if(match?.photo) setTimeout(()=>openLightbox(match.photo,match.name,`$${match.price}`),300);
+  const el=[...document.querySelectorAll('.card-name')].find(e=>e.textContent===decodeURIComponent(item));
+  if(el) el.closest('.card').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+async function load(){
+  try{
+    const res=await fetch('items.json');
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    allItems=await res.json();
+    buildFilters();render();handleDeepLink();
+  }catch(err){
+    document.getElementById('grid').innerHTML=`<div class="state"><div class="state-icon">⚠️</div><h2>Couldn't load listings</h2><p>${err.message}</p></div>`;
   }
 }
-
 load();
 </script>
 </body>
